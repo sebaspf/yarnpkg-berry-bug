@@ -1,0 +1,16 @@
+{
+  "name": "yarn-berry-pnp-bug-repro",
+  "packageManager": "yarn@4.12.0",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "app"
+  ],
+  "scripts": {
+    "build": "yarn workspace shared build && yarn workspace app build"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
