@@ -1,0 +1,39 @@
+diff --git a/lib/typescript.js b/lib/typescript.js
+index 0554fc3fc707ce3edbc3c4f8f4d77f8aa3def7ba..e37cf8c6a32f2d297c837660cf172dd0b63ceb11 100644
+--- a/lib/typescript.js
++++ b/lib/typescript.js
+@@ -45683,7 +45683,9 @@ function readPackageJsonPeerDependencies(packageJsonInfo, state) {
+   if (peerDependencies === void 0) return void 0;
+   if (state.traceEnabled) trace(state.host, Diagnostics.package_json_has_a_peerDependencies_field);
+   const packageDirectory = realPath(packageJsonInfo.packageDirectory, state.host, state.traceEnabled);
+-  const nodeModules = packageDirectory.substring(0, packageDirectory.lastIndexOf("node_modules") + "node_modules".length) + directorySeparator;
++  const nodeModulesIdx = packageDirectory.lastIndexOf("node_modules");
++    if (nodeModulesIdx === -1) return void 0;
++    const nodeModules = packageDirectory.substring(0, nodeModulesIdx + "node_modules".length) + directorySeparator;
+   let result = "";
+   for (const key in peerDependencies) {
+     if (hasProperty(peerDependencies, key)) {
+@@ -193388,13 +193390,16 @@ function createModuleSpecifierCache(host) {
+       if (moduleSpecifiers) {
+         for (const p of modulePaths) {
+           if (p.isInNodeModules) {
+-            const nodeModulesPath = p.path.substring(0, p.path.indexOf(nodeModulesPathPart) + nodeModulesPathPart.length - 1);
+-            const key2 = host.toPath(nodeModulesPath);
+-            if (!(containedNodeModulesWatchers == null ? void 0 : containedNodeModulesWatchers.has(key2))) {
+-              (containedNodeModulesWatchers || (containedNodeModulesWatchers = /* @__PURE__ */ new Map())).set(
+-                key2,
+-                host.watchNodeModulesForPackageJsonChanges(nodeModulesPath)
+-              );
++            const nodeModulesIndex = p.path.indexOf(nodeModulesPathPart);
++            if (nodeModulesIndex !== -1) {
++              const nodeModulesPath = p.path.substring(0, nodeModulesIndex + nodeModulesPathPart.length - 1);
++              const key2 = host.toPath(nodeModulesPath);
++              if (!(containedNodeModulesWatchers == null ? void 0 : containedNodeModulesWatchers.has(key2))) {
++                (containedNodeModulesWatchers || (containedNodeModulesWatchers = /* @__PURE__ */ new Map())).set(
++                  key2,
++                  host.watchNodeModulesForPackageJsonChanges(nodeModulesPath)
++                );
++              }
+             }
+           }
+         }

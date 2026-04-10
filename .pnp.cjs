@@ -38,7 +38,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
+          ["typescript", "patch:typescript@patch%3Atypescript@npm%253A5.9.3%23./patches/typescript-npm-5.9.3-48715be868.patch%3A%3Aversion=5.9.3&hash=4e1cc6&locator=yarn-berry-pnp-bug-repro%2540workspace%253A.#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
           ["yarn-berry-pnp-bug-repro", "workspace:."]\
         ],\
         "linkType": "SOFT"\
@@ -72,13 +72,20 @@ const RAW_RUNTIME_STATE =
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["patch:typescript@patch%3Atypescript@npm%253A5.9.3%23./patches/typescript-npm-5.9.3-48715be868.patch%3A%3Aversion=5.9.3&hash=4e1cc6&locator=yarn-berry-pnp-bug-repro%2540workspace%253A.#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5", {\
+        "packageLocation": "../../.yarn/berry/cache/typescript-patch-cf8a69bb3c-10c0.zip/node_modules/typescript/",\
+        "packageDependencies": [\
+          ["typescript", "patch:typescript@patch%3Atypescript@npm%253A5.9.3%23./patches/typescript-npm-5.9.3-48715be868.patch%3A%3Aversion=5.9.3&hash=4e1cc6&locator=yarn-berry-pnp-bug-repro%2540workspace%253A.#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["yarn-berry-pnp-bug-repro", [\
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
+          ["typescript", "patch:typescript@patch%3Atypescript@npm%253A5.9.3%23./patches/typescript-npm-5.9.3-48715be868.patch%3A%3Aversion=5.9.3&hash=4e1cc6&locator=yarn-berry-pnp-bug-repro%2540workspace%253A.#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
           ["yarn-berry-pnp-bug-repro", "workspace:."]\
         ],\
         "linkType": "SOFT"\

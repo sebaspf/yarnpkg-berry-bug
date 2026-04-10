@@ -11,6 +11,6 @@
     "build": "yarn workspace shared build && yarn workspace app build"
   },
   "devDependencies": {
-    "typescript": "^5.9.3"
+    "typescript": "patch:typescript@npm%3A5.9.3#./patches/typescript-npm-5.9.3-48715be868.patch"
   }
 }

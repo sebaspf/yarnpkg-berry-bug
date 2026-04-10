@@ -22,13 +22,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"typescript@npm:^5.9.3":
+"typescript@npm:5.9.3, typescript@npm:^5.9.3":
   version: 5.9.3
   resolution: "typescript@npm:5.9.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10c0/6bd7552ce39f97e711db5aa048f6f9995b53f1c52f7d8667c1abdc1700c68a76a308f579cd309ce6b53646deb4e9a1be7c813a93baaf0a28ccd536a30270e1c5
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A5.9.3#./patches/typescript-npm-5.9.3-48715be868.patch::locator=yarn-berry-pnp-bug-repro%40workspace%3A.":
+  version: 5.9.3
+  resolution: "typescript@patch:typescript@npm%3A5.9.3#./patches/typescript-npm-5.9.3-48715be868.patch::version=5.9.3&hash=4e1cc6&locator=yarn-berry-pnp-bug-repro%40workspace%3A."
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/f6ec9419ae7739cde22a1322cc17f9b57afbc7777e28eb308e49e7d2a84a26643da7f77486b10c07d7b5c73e7c4b2ecfe8ac7f46f9ee8dbcda3e62c6a5ee238d
   languageName: node
   linkType: hard
 
@@ -42,10 +52,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@patch:typescript@patch%3Atypescript@npm%253A5.9.3%23./patches/typescript-npm-5.9.3-48715be868.patch#optional!builtin<compat/typescript>":
+  version: 5.9.3
+  resolution: "typescript@patch:typescript@patch%3Atypescript@npm%253A5.9.3%23./patches/typescript-npm-5.9.3-48715be868.patch%3A%3Aversion=5.9.3&hash=4e1cc6&locator=yarn-berry-pnp-bug-repro%2540workspace%253A.#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/b629608ea2a048b092ffc78643f65294a5e356c1ea3fc29dd536e66480463b3dc99ec42e379b225178aec8cc1f4d25dfb1ba3d268bb5e121e182ac23a70e0e67
+  languageName: node
+  linkType: hard
+
 "yarn-berry-pnp-bug-repro@workspace:.":
   version: 0.0.0-use.local
   resolution: "yarn-berry-pnp-bug-repro@workspace:."
   dependencies:
-    typescript: "npm:^5.9.3"
+    typescript: "patch:typescript@npm%3A5.9.3#./patches/typescript-npm-5.9.3-48715be868.patch"
   languageName: unknown
   linkType: soft
